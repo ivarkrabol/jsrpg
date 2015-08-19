@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>IVAR.HK</title>
+  <style type="text/css"> body, html {margin: 0;padding: 0;overflow: hidden;background: #111;color: #eee;}</style>
+  <script>
+window.onload = function () {
+  var g = Array(500).fill(Array(800).fill(' '));
+  var f = [function(x,y,t){return Math.sin(Math.pow(x*x+y*y,Math.sin(0.001*t))-0.003*t)/2+0.5},
+    function(x,y,t){return Math.sin(Math.pow(x*x + y*y, Math.sin(-0.001*t)) + 4*(Math.atan(y/x)) - 0.003*t)/2 + 0.5},
+    function(x,y,t){return Math.random()}, function(x,y,t){return Math.sin(0.0005*t)/2 + 0.5}];
+  windowd.setInterval(function() {
+    for(var y,x=0,t=new Date().getTime();x<800;x++) for(y=0;y<500;y++) {
+      g[y][x] = " ~+$#"[Math.min(Math.floor(5*f[Math.floor(5*Math.pow(Math.cos(t),2))](x,y,t)), 4)];
+    }
+  }, 1000/12);
+}
+  </script>
+</head><body></body></html>
