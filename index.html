@@ -1,16 +1,10 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>IVAR.HK</title>
-  <style type="text/css"> body, html {margin: 0;padding: 0;overflow: hidden;background: #111;color: #eee;}</style>
-  <script>
-window.onload = function () {
-  var g = Array(500).fill(Array(800).fill(' '));
-  var f = [function(x,y,t){return Math.sin(Math.pow(x*x+y*y,Math.sin(0.001*t))-0.003*t)/2+0.5},
-    function(x,y,t){return Math.sin(Math.pow(x*x + y*y, Math.sin(-0.001*t)) + 4*(Math.atan(y/x)) - 0.003*t)/2 + 0.5},
-    function(x,y,t){return Math.random()}, function(x,y,t){return Math.sin(0.0005*t)/2 + 0.5}];
-  windowd.setInterval(function() {
-    for(var y,x=0,t=new Date().getTime();x<800;x++) for(y=0;y<500;y++) {
-      g[y][x] = " ~+$#"[Math.min(Math.floor(5*f[Math.floor(5*Math.pow(Math.cos(t),2))](x,y,t)), 4)];
-    }
-  }, 1000/12);
-}
-  </script>
-</head><body></body></html>
+<style type="text/css"> body {margin: -20px;overflow: hidden;background: #111;color: #999;}</style><script>
+window.onload=function(){
+var M=Math,f=[function(x,y,t){return x||y?M.sin(M.pow(x*x+y*y,M.sin(-t))+4*(M.atan(y/x))-3*t)/2+.5:0
+},function(x,y,t){return M.random()},function(x,y,t){return x||y?M.sin(M.pow(x*x+y*y,M.sin(t))-3*t)/2+.5:0}];
+window.setInterval(function(){
+for(var o="",m=M.min,r=M.random,s=M.sin,t=new Date().getTime()/1000,x,y=0;y<70;y++){for(x=0;x<280;x++){
+o+=" ~=+$#X"[m(6,M.floor(7*f[m(2,M.floor(s(.2*t)+1)+((s(.2*t)+1)%1>=r()))]((y-35)*2,x-140,t)))]
+}o+="\n"}document.getElementsByTagName("pre")[0].innerHTML=o}, 1000.0/12.0)}
+</script></head><body><pre></pre></body></html>
